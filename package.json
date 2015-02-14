@@ -24,6 +24,7 @@
     "mongoose": "^3.8.22"
   },
   "devDependencies": {
+    "jsdoc": "^3.3.0-beta1",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-nodeunit": "^0.4.1",
@@ -37,6 +38,7 @@
     "time-grunt": "^1.0.0"
   },
   "scripts": {
-    "test": "grunt"
+    "test": "grunt",
+    "gendocs": "./node_modules/.bin/jsdoc -d docs -r README.md lib/"
   }
 }
