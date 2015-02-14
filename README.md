@@ -21,6 +21,26 @@ The basic idea is, that you'll create a wall, then save it's ObjectID somewhere 
 
 Later on you can start any actions provided by the API by supplying the wall id, and the necessary parameters for the action.
 
+## Running tests
+
+```sh
+$ npm test
+```
+
+or if you are developing this package
+
+```sh
+$ grunt watch
+```
+
+# Generating the documentation
+
+The following command outputs the documentation under `/docs`
+
+```sh
+$ npm run-script gendocs
+```
+
 ## License
 
 MIT © [Viktor Nagy](https://github.com/nagyv/estisia-wall)
