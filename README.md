@@ -1,7 +1,6 @@
-#  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image]
+# A pluggable message wall
 
-> A pluggable message wall
-
+ [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image]
 
 ## Install
 
@@ -15,7 +14,7 @@ $ npm install --save estisia-wall
 var estisia-wall = require('estisia-wall');
 ```
 
-See the [API docs](http://nagyv.github.io/estisia-wall/) for available methods.
+See the [API docs](http://nagyv.github.io/estisia-wall/module-WallAPI.html) for available methods.
 
 The basic idea is, that you'll create a wall, then save it's ObjectID somewhere in your models.
 
@@ -35,7 +34,7 @@ or if you are developing this package
 $ grunt watch
 ```
 
-# Generating the documentation
+## Generating the documentation
 
 The following command outputs the documentation under `/docs`
 
