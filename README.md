@@ -9,20 +9,21 @@
 $ npm install --save estisia-wall
 ```
 
-
 ## Usage
 
 ```js
 var estisia-wall = require('estisia-wall');
-
-estisia-wall('Rainbow');
 ```
 
+See the [API docs](http://nagyv.github.io/estisia-wall/) for available methods.
+
+The basic idea is, that you'll create a wall, then save it's ObjectID somewhere in your models.
+
+Later on you can start any actions provided by the API by supplying the wall id, and the necessary parameters for the action.
 
 ## License
 
 MIT © [Viktor Nagy](https://github.com/nagyv/estisia-wall)
-
 
 [npm-url]: https://npmjs.org/package/estisia-wall
 [npm-image]: https://badge.fury.io/js/estisia-wall.svg
