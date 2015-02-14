@@ -1,6 +1,6 @@
 {
   "name": "estisia-wall",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "A pluggable message wall",
   "homepage": "http://nagyv.github.io/estisia-wall/",
   "author": {
@@ -11,6 +11,7 @@
   "repository": "nagyv/estisia-wall",
   "license": "MIT",
   "files": [
+    "lib/*.js",
     "index.js"
   ],
   "keywords": [

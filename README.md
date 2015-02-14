@@ -23,6 +23,8 @@ Later on you can start any actions provided by the API by supplying the wall id,
 
 ## Running tests
 
+To run the tests you'll need a git checkout, as the npm version does not contain them.
+
 ```sh
 $ npm test
 ```
