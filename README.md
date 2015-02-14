@@ -43,7 +43,7 @@ $ npm run-script gendocs
 
 ## License
 
-MIT © [Viktor Nagy](https://github.com/nagyv/estisia-wall)
+MIT © [Viktor Nagy](https://github.com/nagyv)
 
 [npm-url]: https://npmjs.org/package/estisia-wall
 [npm-image]: https://badge.fury.io/js/estisia-wall.svg

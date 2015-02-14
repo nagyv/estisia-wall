@@ -1,12 +1,12 @@
 {
   "name": "estisia-wall",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A pluggable message wall",
-  "homepage": "https://github.com/nagyv/estisia-wall",
+  "homepage": "http://nagyv.github.io/estisia-wall/",
   "author": {
     "name": "Viktor Nagy",
     "email": "viktor.nagy@gmail.com",
-    "url": "https://github.com/nagyv/estisia-wall"
+    "url": "https://github.com/nagyv"
   },
   "repository": "nagyv/estisia-wall",
   "license": "MIT",
@@ -15,6 +15,7 @@
   ],
   "keywords": [
     "estisia-wall",
+    "messageboard",
     "message wall",
     "mongoose",
     "pluggable"
