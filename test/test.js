@@ -26,6 +26,12 @@ describe('estisia-wall node module', function () {
   it('provides dropWall method', function(){
     estisiaWall.should.have.property('dropWall');
   });
+  it('provides createMessage method', function(){
+    estisiaWall.should.have.property('createMessage');
+  });
+  it('provides createComment method', function(){
+    estisiaWall.should.have.property('createComment');
+  });
 
   describe('createWall', function(){
     it('creates a new Wall', function(done){
@@ -188,6 +194,60 @@ describe('estisia-wall node module', function () {
     it('throws error if wall not exist', function(done){
       estisiaWall.getWall(mongoose.Types.ObjectId(), function(err){
         should.exist(err);
+        done();
+      });
+    });
+  });
+
+  describe('createMessage', function(){
+    var wallId, ownerId;
+    beforeEach(function (done) {
+      ownerId = mongoose.Types.ObjectId();
+      estisiaWall.createWall(
+        'Title',
+        ownerId,
+        function (err, _wall) {
+          wallId = _wall.id;
+          done(err);
+      });
+    });
+    afterEach(function (done) {
+      estisiaWall.dropWall(wallId, done);
+    });
+
+    it('creates new Message', function(done){
+      estisiaWall.createMessage(wallId, ownerId, 'My title', 'Lorem ipsum', function(err, wall){
+        should.not.exist(err);
+        wall.messages.should.have.length(1);
+        done();
+      });
+    });
+  });
+
+  describe('createComment', function(){
+    var wallId, ownerId;
+    beforeEach(function (done) {
+      ownerId = mongoose.Types.ObjectId();
+      estisiaWall.createWall(
+        'Title',
+        ownerId,
+        function (err, wall) {
+          wallId = wall.id;
+          wall.addMessage({
+            title:'Title',
+            'author': ownerId,
+            'message': 'My message'
+          }, done);
+      });
+    });
+    afterEach(function (done) {
+      estisiaWall.dropWall(wallId, done);
+    });
+
+    it('adds a new comment', function(done){
+      estisiaWall.createComment(wallId, 0, ownerId, 'My reply', function(err, wall){
+        should.not.exist(err);
+        wall.messages[0].replies.should.have.length(1);
         done();
       });
     });

@@ -79,8 +79,10 @@ describe('The Wall model', function () {
 });
 
 describe("A wall's Messages", function () {
-  var wall;
+  var wall, editorId, memberId;
   beforeEach(function (done) {
+    editorId = mongoose.Types.ObjectId();
+    memberId = mongoose.Types.ObjectId();
     Wall.create({
       title: 'Title',
       participants: [
@@ -89,11 +91,11 @@ describe("A wall's Messages", function () {
           'role': 'admin'
         },
         {
-          'object': mongoose.Types.ObjectId(),
+          'object': editorId,
           'role': 'editor'
         },
         {
-          'object': mongoose.Types.ObjectId(),
+          'object': memberId,
           'role': 'member'
         }
       ]
@@ -109,12 +111,32 @@ describe("A wall's Messages", function () {
   it('can be added to a Wall', function (done) {
     wall.addMessage({
       title: 'My message',
-      author: mongoose.Types.ObjectId(),
+      author: editorId,
       message: 'Lorem ipsum'
     }, function (err, wall) {
         should.not.exist(err);
         should.exist(wall);
         wall.messages.should.have.length(1);
+        done();
+    });
+  });
+  it('unknown is not allowed to add Message', function(done){
+    wall.addMessage({
+      title: 'My message',
+      author: mongoose.Types.ObjectId(),
+      message: 'Lorem ipsum'
+    }, function (err) {
+        should.exist(err);
+        done();
+    });
+  });
+  it('members are not allowed to add Messages', function(done){
+    wall.addMessage({
+      title: 'My message',
+      author: memberId,
+      message: 'Lorem ipsum'
+    }, function (err) {
+        should.exist(err);
         done();
     });
   });
@@ -125,15 +147,13 @@ describe("A wall's Messages", function () {
     }, function (err, wall) {
       should.exist(err);
       should.not.exist(wall);
-      err.errors.should.have.property('messages.0.author');
-      err.errors['messages.0.author'].type.should.equal('required');
       done();
     });
   });
   it('requires a message', function (done) {
     wall.addMessage({
       title: 'My message',
-      author: mongoose.Types.ObjectId()
+      author: editorId
     }, function (err, wall) {
       should.exist(err);
       should.not.exist(wall);
@@ -145,7 +165,7 @@ describe("A wall's Messages", function () {
   it('can be read', function (done) {
     wall.addMessage({
       title: 'My message',
-      author: mongoose.Types.ObjectId(),
+      author: editorId,
       message: 'Lorem ipsum'
     }, function (err, wall) {
       should.not.exist(err);
@@ -166,7 +186,7 @@ describe("A wall's Messages", function () {
     beforeEach(function (done) {
       wall.addMessage({
         title: 'My message',
-        author: mongoose.Types.ObjectId(),
+        author: editorId,
         message: 'Lorem ipsum'
       }, done);
     });
@@ -179,7 +199,7 @@ describe("A wall's Messages", function () {
       wall.replyTo({
         replyTo: 0,
         message: 'My reply',
-        author: mongoose.Types.ObjectId(),
+        author: editorId,
       }, function (err, wall) {
         should.not.exist(err);
         should.exist(wall);
