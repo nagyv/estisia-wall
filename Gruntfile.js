@@ -4,6 +4,7 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
   // Load all grunt tasks
   require('load-grunt-tasks')(grunt);
+  grunt.loadNpmTasks('grunt-notify');
 
   grunt.initConfig({
     jshint: {
@@ -15,7 +16,7 @@ module.exports = function (grunt) {
         src: ['Gruntfile.js']
       },
       js: {
-        src: ['*.js']
+        src: ['lib/*.js', 'index.js']
       },
       test: {
         src: ['test/**/*.js']

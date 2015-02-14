@@ -10,5 +10,12 @@
   "unused": true,
   "boss": true,
   "eqnull": true,
-  "node": true
+  "node": true,
+  "globals": {
+    "require": false,
+    "before": false,
+    "after": false,
+    "beforeEach": false,
+    "afterEach": false
+  }
 }
