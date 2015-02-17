@@ -29,6 +29,8 @@
 <header>
     
         
+            
+        
     
 </header>
 
@@ -36,6 +38,81 @@
     <div class="container-overview">
     
         
+            <div class="description">The estisia WallAPI provides a simple way to add a message board
+to you node base apps.</div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line46">line 46</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
     
@@ -253,7 +330,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line150">line 150</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line183">line 183</a>
     </li></ul></dd>
     
 
@@ -276,6 +353,11 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>wall.createComment(wallId, 0, user.id, 'This is a reply on the first message', function(err, wall){});</code></pre>
 
 
 
@@ -476,7 +558,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line133">line 133</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line163">line 163</a>
     </li></ul></dd>
     
 
@@ -499,6 +581,11 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>wall.createMessage(wallId, user.id, 'My subject', 'Lorem ipsum', function(err, wall){});</code></pre>
 
 
 
@@ -676,7 +763,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line53">line 53</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line68">line 68</a>
     </li></ul></dd>
     
 
@@ -699,6 +786,22 @@
 
 
 
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Create wall without initial participants
+wall.createWall('My wall', user.id, function(err, wall){});</code></pre>
+
+    <pre class="prettyprint"><code>Create wall with initial participants
+var participants = [{
+ object: editor.id,
+ role: 'editor'
+}, {
+ object: reader.id,
+ role: 'reader'
+}];
+wall.createWall('My wall, admin.id, participants, function(err, wall){});</code></pre>
 
 
 
@@ -830,7 +933,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line83">line 83</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line104">line 104</a>
     </li></ul></dd>
     
 
@@ -853,6 +956,11 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>wall.dropWall(wallId, function(err){});</code></pre>
 
 
 
@@ -984,7 +1092,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line74">line 74</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line92">line 92</a>
     </li></ul></dd>
     
 
@@ -1007,6 +1115,11 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>wall.getWall(wallId, function(err, wall){});</code></pre>
 
 
 
@@ -1184,7 +1297,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line95">line 95</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line119">line 119</a>
     </li></ul></dd>
     
 
@@ -1207,6 +1320,11 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>wall.joinWall(wallId, user.id, 'editor', function(err, wall){});</code></pre>
 
 
 
@@ -1361,7 +1479,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line110">line 110</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line137">line 137</a>
     </li></ul></dd>
     
 
@@ -1384,6 +1502,11 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>wall.leaveWall(wallId, user.id, function(err, wall){});</code></pre>
 
 
 
@@ -1470,7 +1593,7 @@
             <td class="type">
             
                 
-<span class="param-type"><a href="Wall.html">Wall</a></span>
+<span class="param-type">Wall</span>
 
 
             
@@ -1521,7 +1644,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line159">line 159</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line192">line 192</a>
     </li></ul></dd>
     
 
@@ -1567,7 +1690,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Sat Feb 14 2015 17:09:13 GMT+0100 (CET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Tue Feb 17 2015 01:00:10 GMT+0100 (CET)
 </footer>
 
 <script> prettyPrint(); </script>
