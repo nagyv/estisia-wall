@@ -55,7 +55,7 @@ describe('The Wall model', function () {
     wall.validate(function (err) {
       should.exist(err);
       err.errors.should.have.property('title');
-      err.errors.title.type.should.equal('required');
+      err.errors.title.kind.should.equal('required');
       done();
     });
   });
@@ -72,7 +72,7 @@ describe('The Wall model', function () {
     wall.validate(function (err) {
       should.exist(err);
       err.errors.should.have.property('participants.0.role');
-      err.errors['participants.0.role'].type.should.equal('enum');
+      err.errors['participants.0.role'].kind.should.equal('enum');
       done();
     });
   });
@@ -158,7 +158,7 @@ describe("A wall's Messages", function () {
       should.exist(err);
       should.not.exist(wall);
       err.errors.should.have.property('messages.0.message');
-      err.errors['messages.0.message'].type.should.equal('required');
+      err.errors['messages.0.message'].kind.should.equal('required');
       done();
     });
   });

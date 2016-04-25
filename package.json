@@ -22,25 +22,26 @@
     "pluggable"
   ],
   "dependencies": {
-    "lodash": "^3.0.1",
-    "mongoose": "^3.8.22"
+    "lodash": "^4.11.1",
+    "mongoose": "^4.4.13"
   },
   "devDependencies": {
-    "jsdoc": "^3.3.0-beta1",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-nodeunit": "^0.4.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-mocha-cli": "^1.11.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-mocha-cli": "^2.1.0",
     "grunt-notify": "^0.4.1",
-    "jshint-stylish": "^1.0.0",
-    "load-grunt-tasks": "^1.0.0",
-    "mockgoose": "^1.10.7",
-    "should": "^4.6.2",
+    "jsdoc": "^3.3.0-beta1",
+    "jshint-stylish": "^2.1.0",
+    "load-grunt-tasks": "^3.5.0",
+    "mockgoose": "^6.0.2",
+    "should": "^8.3.1",
     "time-grunt": "^1.0.0"
   },
   "scripts": {
-    "test": "grunt",
+    "test": "./node_modules/.bin/grunt",
     "gendocs": "./node_modules/.bin/jsdoc -d docs -r README.md lib/"
   }
 }
