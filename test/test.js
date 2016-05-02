@@ -216,9 +216,9 @@ describe('estisia-wall node module', function () {
     });
 
     it('creates new Message', function(done){
-      estisiaWall.createMessage(wallId, ownerId, 'My title', 'Lorem ipsum', function(err, wall){
+      estisiaWall.createMessage(wallId, ownerId, 'My title', 'Lorem ipsum', function(err, message){
         should.not.exist(err);
-        wall.messages.should.have.length(1);
+        should.exist(message);
         done();
       });
     });

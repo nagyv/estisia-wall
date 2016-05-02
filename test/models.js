@@ -113,10 +113,11 @@ describe("A wall's Messages", function () {
       title: 'My message',
       author: editorId,
       message: 'Lorem ipsum'
-    }, function (err, wall) {
+    }, function (err, message) {
         should.not.exist(err);
-        should.exist(wall);
+        should.exist(message);
         wall.messages.should.have.length(1);
+        should.equal(message._id, wall.messages[0]._id);
         done();
     });
   });
@@ -144,9 +145,9 @@ describe("A wall's Messages", function () {
     wall.addMessage({
       title: 'My message',
       message: 'Lorem ipsum'
-    }, function (err, wall) {
+    }, function (err, message) {
       should.exist(err);
-      should.not.exist(wall);
+      should.not.exist(message);
       done();
     });
   });
@@ -154,9 +155,9 @@ describe("A wall's Messages", function () {
     wall.addMessage({
       title: 'My message',
       author: editorId
-    }, function (err, wall) {
+    }, function (err, message) {
       should.exist(err);
-      should.not.exist(wall);
+      should.not.exist(message);
       err.errors.should.have.property('messages.0.message');
       err.errors['messages.0.message'].kind.should.equal('required');
       done();
@@ -167,9 +168,9 @@ describe("A wall's Messages", function () {
       title: 'My message',
       author: editorId,
       message: 'Lorem ipsum'
-    }, function (err, wall) {
+    }, function (err, message) {
       should.not.exist(err);
-      should.exist(wall);
+      should.exist(message);
       wall.read({
         message: [0],
         reader: mongoose.Types.ObjectId()
